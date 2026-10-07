@@ -1,0 +1,104 @@
+MINI GPT PROJECT: SHURU SE TEXT GENERATION TAK
+
+Is guide mein hum Python aur PyTorch ka use karke War and Peace text par
+ek chhota character-level GPT model banayenge, use train karenge aur usse
+naya text generate karenge.
+
+
+1. DATASET DOWNLOAD KAREIN
+
+Project Gutenberg se War and Peace download karein:
+https://www.gutenberg.org/ebooks/79701
+
+Text file download karke usse project ke dataset folder mein book.txt naam
+se save karein. Is project mein book.txt training data ke roop mein use hogi.
+
+
+2. VS CODE MEIN PROJECT BANAYEIN
+
+VS Code mein ek project folder banayein, jaise mini_gpt. Is folder ke andar
+train.py file banayein. Notebook ke experiments ke liye gptunderstanding.ipynb
+file bhi banayein.
+
+
+3. CHATGPT SE SHURUAATI GUIDANCE LEIN
+
+ChatGPT ko yeh prompt dein:
+
+Main Python aur PyTorch ka use karke scratch se ek chhota GPT model banana
+chahta hoon. Mere paas "War and Peace" ka text dataset book.txt file ke roop
+mein hai, aur maine train.py file bana li hai. Kya aap mujhe is project ko
+step by step banane aur programming mein madad kar sakte hain?
+
+
+4. NOTEBOOK MEIN DATASET KO SAMJHEIN AUR TAIYAAR KAREIN
+
+gptunderstanding.ipynb notebook mein neeche diye gaye prompts ko ek-ek karke
+use karein. Har step ka code run karke uska output check karein:
+
+- open() ka use karke book.txt ko read karein aur text ko notebook mein load
+  karein.
+- Text ko inspect karein: uske shuruati aur aakhiri hisson ko dekhein aur
+  basic statistics nikalein.
+- Text mein aane wale sabhi unique characters ki list banayein.
+- Har character ko ek integer ID dene ke liye character-to-integer mapping
+  taiyaar karein.
+- Poore text dataset ko encode karke torch.tensor mein badlein.
+- Dataset ko training aur validation sets mein split karein.
+- Training ke liye chhote batches taiyaar karein.
+- Aage ke experiments ke liye ek BigramLanguageModel banayein.
+- Model ko train karke loss kam karein; next-character prediction check
+  karein aur generate() function se naya text likhwayein.
+- Training ke liye PyTorch optimizer banayein aur use training loop mein
+  istemal karein.
+
+
+5. EXPERIMENTS KE AADHAAR PAR train.py TAIYAAR KAREIN
+
+Apni gptunderstanding.ipynb notebook aur uske outputs ko ChatGPT ke saath
+share karke yeh prompt dein:
+
+Maine apni gptunderstanding.ipynb file attach ki hai. Ismein dataset ke saath
+kiye gaye experiments aur unke outputs hain. In experiments ko aadhaar banakar
+mere mini_gpt project ke liye ek detailed train.py file taiyaar karein. Code
+ko samajhne layak rakhein aur dataset loading, tokenizer, training/validation
+split, batches, model training, loss evaluation aur checkpoint saving ko
+shamil karein.
+
+ChatGPT se mila code train.py file mein rakhein. File ko run karke training
+output aur errors check karein. Agar koi error aaye, to error message ke saath
+ChatGPT se usse fix karne mein madad lein.
+
+
+6. GPU PAR MODEL TRAIN KAREIN
+
+Apne system par CUDA-enabled PyTorch aur compatible NVIDIA GPU available
+hone ki pushti karein. Training script mein device ko CUDA par set karein,
+taaki model aur training batches GPU par process hon. Training chalayein aur
+console mein device aur GPU ka naam verify karein.
+
+
+7. CHECKPOINT LOAD KARKE TEXT GENERATE KAREIN
+
+Training ke baad model checkpoint save hona chahiye. Checkpoint ka naam aur
+location project ke train.py mein set ki hui value ke mutabik check karein.
+Phir ChatGPT ko training code ya checkpoint details dekar yeh prompt dein:
+
+Mere model ki training complete ho chuki hai aur uska checkpoint
+mini_gpt/checkpoint/best_model.pt mein save hai. Mere liye genrate.py file
+taiyaar karein, jo is checkpoint ko load kare, baar-baar user se prompt
+maange, model se prompt ke aage naya text generate kare, aur har generated
+result ko output/generated.txt mein save kare. File ko VS Code terminal se
+run karne ke instructions bhi dein.
+
+genrate.py file ko VS Code terminal mein run karein. Prompt enter karke
+generated text dekhein. Prompt loop band karne ke liye q, quit, ya exit type
+karein.
+
+
+PROJECT KA MUKHYA WORKFLOW
+
+Dataset download karein -> notebook mein text inspect aur encode karein ->
+training/validation batches banayein -> model aur optimizer taiyaar karein ->
+GPU par model train karein -> best checkpoint save karein -> checkpoint load
+karke naye prompts se text generate karein.
